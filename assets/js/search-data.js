@@ -507,13 +507,6 @@ ninja.data = [{
           window.open("https://github.com/xtst", "_blank");
         },
       },{
-        id: 'social-x',
-        title: 'X',
-        section: 'Socials',
-        handler: () => {
-          window.open("https://twitter.com/tongxin_sjtu", "_blank");
-        },
-      },{
         id: 'social-scholar',
         title: 'Google Scholar',
         section: 'Socials',
@@ -528,6 +521,20 @@ ninja.data = [{
           window.open("/feed.xml", "_blank");
         },
       },{
+        id: 'social-x',
+        title: 'X',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://x.com/tongxin_sjtu", "_blank");
+        },
+      },{
+        id: 'social-xiaohongshu',
+        title: 'Xiaohongshu',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://xhslink.com/m/ANKzjmTyeHb", "_blank");
+        },
+      },{
         id: 'social-zhihu',
         title: 'Zhihu',
         section: 'Socials',
@@ -540,13 +547,6 @@ ninja.data = [{
         section: 'Socials',
         handler: () => {
           window.open("https://ipads.se.sjtu.edu.cn/", "_blank");
-        },
-      },{
-        id: 'social-xiaohongshu',
-        title: 'Xiaohongshu',
-        section: 'Socials',
-        handler: () => {
-          window.open("https://xhslink.com/m/ANKzjmTyeHb", "_blank");
         },
       },{
       id: 'light-theme',
