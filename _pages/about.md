@@ -21,6 +21,9 @@ announcements:
   scrollable: true # adds a vertical scroll bar if there are more than 3 news items
   limit: 5 # leave blank to include all the news in the `_news` folder
 
+awards:
+  enabled: true
+
 latest_posts:
   enabled: false
   scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
@@ -33,18 +36,8 @@ My research interests primarily focus on **MLsys**, **AI Infrastructure**, and *
 
 I am a core contributor to [**PowerServe**](https://github.com/powerserve-project/PowerServe), a high-performance LLM inference framework for mobile devices.
 
-I have a strong background in algorithms and data structures, having won first prizes in the National Olympiad in Informatics in Provinces (NOIP) for four consecutive years. I am also the Chairman of the CCF SJTU Student Chapter (starting Jan 2026).
+I have developed a relatively solid foundation in algorithms and data structures, and was fortunate to receive first prizes in the National Olympiad in Informatics in Provinces (NOIP) for four consecutive years. I will also serve as Chairman of the CCF SJTU Student Chapter starting from Jan 2026.
 
-Outside of research, I am the captain of the Badminton Team of the School of Electronic Information and Electrical Engineering (SEIEE) at SJTU.
+Outside of research, I really enjoy badminton, and I'm quite skilled at it. I am the member of the SJTU Badminton Team and the captain of the Badminton Team of the School of Electronic Information and Electrical Engineering (SEIEE) at SJTU. I have won many awards in badminton, ranging from amateur competitions to provincial professional youth competitions
 
-## Awards
-
-{% assign awards = site.data.cv.cv.sections.Awards %}
-{% if awards and awards.size > 0 %}
-  {% for award in awards %}
-- **{{ award.title }}**
-  {% if award.date %} ({{ award.date }}){% endif %}
-  {% if award.awarder %} - {{ award.awarder }}{% endif %}
-  {% if award.summary %}: {{ award.summary }}{% endif %}
-  {% endfor %}
-{% endif %}
+Welcome to follow my accounts: [X](https://x.com/tongxin_sjtu), [Xiaohongshu](https://xhslink.com/m/ANKzjmTyeHb), and [Zhihu](https://www.zhihu.com/people/santo-39-44).

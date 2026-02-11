@@ -48,6 +48,12 @@ layout: default
       {% include news.liquid limit=true %}
     {% endif %}
 
+    <!-- Awards -->
+    {% if page.awards and page.awards.enabled %}
+      <h2>awards</h2>
+      {% include awards.liquid %}
+    {% endif %}
+
     <!-- Latest posts -->
     {% if page.latest_posts and page.latest_posts.enabled %}
       <h2>

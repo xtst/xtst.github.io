@@ -1,0 +1,17 @@
+<div class="awards">
+  {% assign awards = site.data.cv.cv.sections.Awards %}
+  {% if awards and awards.size > 0 %}
+    <ul>
+      {% for award in awards %}
+        <li>
+          <strong>{{ award.title }}</strong>
+          {% if award.date %} ({{ award.date }}){% endif %}
+          {% if award.awarder %} - {{ award.awarder }}{% endif %}
+          {% if award.summary %}: {{ award.summary }}{% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No awards yet.</p>
+  {% endif %}
+</div>
