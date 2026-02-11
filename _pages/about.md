@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: PhD Student at **IPADS**, Shanghai Jiao Tong University.
+subtitle: PhD Student at IPADS lab, Shanghai Jiao Tong University.
 
 profile:
   align: right
