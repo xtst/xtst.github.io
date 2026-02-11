@@ -44,35 +44,7 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "nav-teaching",
-          title: "teaching",
-          description: "Course materials, schedules, and resources for classes taught.",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/teaching/";
-          },
-        },{id: "nav-people",
-          title: "people",
-          description: "members of the lab or group",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/people/";
-          },
-        },{id: "dropdown-bookshelf",
-              title: "bookshelf",
-              description: "",
-              section: "Dropdown",
-              handler: () => {
-                window.location.href = "/books/";
-              },
-            },{id: "dropdown-blog",
-              title: "blog",
-              description: "",
-              section: "Dropdown",
-              handler: () => {
-                window.location.href = "/blog/";
-              },
-            },{id: "post-a-post-with-plotly-js",
+        },{id: "post-a-post-with-plotly-js",
         
           title: "a post with plotly.js",
         
@@ -445,6 +417,12 @@ ninja.data = [{
           description: "",
           section: "News",},{id: "news-our-paper-parer-boosting-erofs-image-creation-with-parallelism-and-reproducibility-was-presented-at-internetware-2024-in-macau",
           title: 'Our paper Parer: Boosting EROFS Image Creation With Parallelism and Reproducibility was presented...',
+          description: "",
+          section: "News",},{id: "news-i-won-the-silver-medal-in-ccsp-ccf-collegiate-computer-systems-and-program-design-competition-the-final-contest-selected-from-top-scorers-in-csp",
+          title: 'I won the Silver Medal in CCSP (CCF Collegiate Computer Systems and Program...',
+          description: "",
+          section: "News",},{id: "news-i-graduated-with-my-b-eng-degree-from-shanghai-jiao-tong-university-and-was-honored-as-a-shanghai-outstanding-graduate",
+          title: 'I graduated with my B.Eng. degree from Shanghai Jiao Tong University and was...',
           description: "",
           section: "News",},{id: "news-our-paper-switchfs-asynchronous-metadata-updates-for-distributed-filesystems-with-in-network-coordination-has-been-accepted-to-eurosys-2026",
           title: 'Our paper SwitchFS: Asynchronous Metadata Updates for Distributed Filesystems with In-Network Coordination has...',
