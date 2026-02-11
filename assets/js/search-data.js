@@ -446,9 +446,6 @@ ninja.data = [{
           section: "News",},{id: "news-our-paper-parer-boosting-erofs-image-creation-with-parallelism-and-reproducibility-was-presented-at-internetware-2024-in-macau",
           title: 'Our paper Parer: Boosting EROFS Image Creation With Parallelism and Reproducibility was presented...',
           description: "",
-          section: "News",},{id: "news-our-work-sereno-taming-memory-bandwidth-contention-in-mobile-llm-inference-has-been-submitted-to-osdi-2026",
-          title: 'Our work Sereno: Taming Memory Bandwidth Contention in Mobile LLM Inference has been...',
-          description: "",
           section: "News",},{id: "news-our-paper-switchfs-asynchronous-metadata-updates-for-distributed-filesystems-with-in-network-coordination-has-been-accepted-to-eurosys-2026",
           title: 'Our paper SwitchFS: Asynchronous Metadata Updates for Distributed Filesystems with In-Network Coordination has...',
           description: "",
@@ -525,6 +522,27 @@ ninja.data = [{
           window.open("mailto:%78%69%6E_%74%6F%6E%67@%73%6A%74%75.%65%64%75.%63%6E", "_blank");
         },
       },{
+        id: 'social-github',
+        title: 'GitHub',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://github.com/xtst", "_blank");
+        },
+      },{
+        id: 'social-x',
+        title: 'X',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://twitter.com/tongxin_sjtu", "_blank");
+        },
+      },{
+        id: 'social-scholar',
+        title: 'Google Scholar',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://scholar.google.com/citations?user=ujdcf9oAAAAJ", "_blank");
+        },
+      },{
         id: 'social-rss',
         title: 'RSS Feed',
         section: 'Socials',
@@ -532,11 +550,25 @@ ninja.data = [{
           window.open("/feed.xml", "_blank");
         },
       },{
-        id: 'social-custom_social',
-        title: 'Custom_social',
+        id: 'social-zhihu',
+        title: 'Zhihu',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://www.zhihu.com/people/santo-39-44", "_blank");
+        },
+      },{
+        id: 'social-ipads',
+        title: 'Ipads',
         section: 'Socials',
         handler: () => {
           window.open("https://ipads.se.sjtu.edu.cn/", "_blank");
+        },
+      },{
+        id: 'social-xiaohongshu',
+        title: 'Xiaohongshu',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://xhslink.com/m/ANKzjmTyeHb", "_blank");
         },
       },{
       id: 'light-theme',
