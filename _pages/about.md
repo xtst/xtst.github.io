@@ -40,4 +40,4 @@ I have developed a relatively solid foundation in algorithms and data structures
 
 Outside of research, I really enjoy badminton, and I'm quite skilled at it. I am the member of the SJTU Badminton Team and the captain of the Badminton Team of the School of Electronic Information and Electrical Engineering (SEIEE) at SJTU. I have won many awards in badminton, ranging from amateur competitions to provincial professional youth competitions
 
-Welcome to follow my accounts: [X](https://x.com/tongxin_sjtu), [Xiaohongshu](https://xhslink.com/m/ANKzjmTyeHb), and [Zhihu](https://www.zhihu.com/people/santo-39-44).
+Feel free to contact me through email: xin_tong@sjtu.edu.cn. Welcome to follow my accounts: [X](https://x.com/tongxin_sjtu), [Xiaohongshu](https://xhslink.com/m/ANKzjmTyeHb), and [Zhihu](https://www.zhihu.com/people/santo-39-44).
