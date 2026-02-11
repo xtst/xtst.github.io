@@ -27,11 +27,11 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am a PhD student at the **Institute of Parallel and Distributed Systems (IPADS)**, **Shanghai Jiao Tong University (SJTU)**, advised by Prof. [Haibo Chen](https://ipads.se.sjtu.edu.cn/pub/member/haibo_chen) and Prof. [Mingkai Dong](https://ipads.se.sjtu.edu.cn/pub/member/mingkai_dong). I received my B.Eng. degree in Information Engineering from SJTU in 2025.
+I am a PhD student at the **Institute of Parallel and Distributed Systems (IPADS)**, **Shanghai Jiao Tong University (SJTU)**, advised by Prof. [Haibo Chen](https://ipads.se.sjtu.edu.cn/pub/members/haibo_chen) and Prof. [Mingkai Dong](https://dong.mk/). I received my B.Eng. degree in Information Engineering from SJTU in 2025.
 
 My research interests primarily focus on **MLsys**, **AI Infrastructure**, and **Operating Systems**. Currently, I am working on optimizing on-device LLM inference and resource management for mobile systems.
 
-I am a core contributor to [**PowerServe**](https://github.com/powerserve-project/PowerServe), a high-performance LLM inference framework for mobile devices. My recent work **Sereno** (under review at OSDI'26) focuses on taming memory bandwidth contention in mobile LLM inference.
+I am a core contributor to [**PowerServe**](https://github.com/powerserve-project/PowerServe), a high-performance LLM inference framework for mobile devices.
 
 I have a strong background in algorithms and data structures, having won first prizes in the National Olympiad in Informatics in Provinces (NOIP) for four consecutive years. I am also the Chairman of the CCF SJTU Student Chapter (starting Jan 2026).
 

@@ -16,6 +16,9 @@ cv:
     - network: Zhihu
       username: santo-39-44
       url: https://www.zhihu.com/people/santo-39-44
+    - network: Xiaohongshu
+      username: xtst
+      url: https://xhslink.com/m/ANKzjmTyeHb
     - network: Google Scholar
       username: Tong Xin
       url: https://scholar.google.com/citations?user=ujdcf9oAAAAJ
@@ -55,22 +58,27 @@ cv:
         end_date: Present
         summary: Working on systems for AI and file systems.
         highlights:
-          - "Sereno: QoS-aware bandwidth yielding system for mobile LLM inference (OSDI'26 Under Review)"
           - "Parer: Boosting EROFS image creation with parallelism (Internetware'24)"
           - "PowerServe: High-performance mobile LLM inference framework (Core Contributor)"
 
     Awards:
+      - title: CCF SJTU Student Chapter Chairman
+        date: 2026 - Present
+        awarder: CCF
+        summary: Chairman of the CCF SJTU Student Chapter.
       - title: National Olympiad in Informatics in Provinces (NOIP) First Prize
         date: 2017-2020
         awarder: CCF
         summary: Won 4 times consecutively.
       - title: CCF CSP Certification
-        summary: Top 1.2% nationwide.
+        summary: Top 1.2% nationwide (Top 400).
       - title: Shanghai Outstanding Graduate
         date: 2025
         summary: Top 3% of graduates.
       - title: "Internet+ Competition Shanghai Silver Award"
         date: 2023
+      - title: University-level scholarships and honors
+        summary: Won 7 times during undergraduate study.
 
     Projects:
       - name: PowerServe
