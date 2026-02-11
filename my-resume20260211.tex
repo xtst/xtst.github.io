@@ -1,0 +1,109 @@
+%!TEX program = xelatex
+
+\documentclass{chicv}
+
+\pagenumbering{gobble}
+
+% optional Chinese support
+\useChinese{Medium}{Heavy}
+\useChinese{Regular}{Bold}
+
+\begin{document}
+
+\name{辛统}
+\begin{basicinfo}
+  \info{\email{xin\_tong@sjtu.edu.cn}}
+  \info{\github{Github}[https://github.com/xtst]}
+  \info{\homepage{HomePage}[https://xtst.github.io/]}
+  \info{\googlescholar{Google Scholar}[https://scholar.google.com/citations?user=ujdcf9oAAAAJ]}
+  \info{\twitter{Twitter}[https://x.com/tongxin_sjtu]}
+  \info{\xiaohongshu{小红书}[https://xhslink.com/m/ANKzjmTyeHb]}
+  \info{\zhihu{Zhihu}[https://www.zhihu.com/people/santo-39-44]}
+\end{basicinfo}
+
+% ======================
+\section{教育背景}
+\cventry{上海交通大学}{2025年9月 -- 至今}
+[博士研究生（在读），计算机学院，IPADS实验室（并行与分布式系统研究所）]
+[中国，上海]
+\begin{itemize}
+  \item 导师：陈海波、董明凯
+  \item 研究方向：MLsys / AI Infrastructure / Operating Systems
+\end{itemize}
+
+\cventry{上海交通大学}{2021年9月 -- 2025年6月}
+[本科，信息工程]
+[中国，上海]
+\begin{itemize}
+  \item GPA：88.6 \quad{} 排名：27/122 \quad{}A\&A+课程共31门
+  \item 获得省级荣誉称号 $\times$ 1次（\textit{上海市优秀毕业生}，top 3\%）、校级奖学金及荣誉称号 $\times$ 7次
+
+\end{itemize}
+
+% ======================
+\section{科研经历}
+
+% ---- Sereno (PhD main project) ----
+\cventry{Sereno：面向移动端LLM推理的QoS感知带宽让渡系统(OSDI'26 Under Review)}{2025年9月 -- 至今}
+[mobile system, OS resource management, AI infra, on-device LLM inference, speculative decoding]
+[IPADS，指导老师：陈海波]
+\begin{itemize}
+  \item \textbf{研究动机：} 智能手机端LLM推理与前台应用并发时，导致严重干扰，且呈现不对称性。定位瓶颈主要源于共享DRAM带宽竞争，并且NPU流量受到系统性结构性偏袒，导致延迟敏感任务的带宽受限。
+  \item 在没有直接硬件机制管理控制带宽的挑战下，提出\textbf{弹性推测解码}动态调度以优化内存带宽资源使用。
+  \item 在真实商用手机实现了系统原型，相较Llama.cpp与MNN等方案，得到了前台QoS与后台LLM吞吐的双重提升。
+\end{itemize}
+
+% ---- EROFS Parer ----
+\cventry{Parer：通过并行化提升EROFS镜像构建性能（Internetware'24, 二作）}{2023年12月 -- 2024年12月}
+[read-only file system, EROFS, filesystem image creation, storage system]
+[IPADS，指导老师：董明凯]
+\begin{itemize}
+  \item 面向Android只读文件系统\textbf{EROFS}的镜像创建工具\textbf{erofs.mkfs}，引入并行化机制以提升镜像创建吞吐与可复现性。
+  \item 主要工作：分析dedupe/compress等阶段开销与性能瓶颈；设计并实现并行化方案；构建实验评估与监控方法
+  \item 论文：\textbf{Internetware'24（CCF-C）已接收}，本人为第二作者。
+  \item 核心代码于2024年4月\textbf{合并至EROFS上游主线}\iconlink{https://git.kernel.org/pub/scm/linux/kernel/git/xiang/erofs-utils.git/commit/?id=830b27bc233421b91ea66b55a3fcc69a99870af8}
+\end{itemize}
+
+% ======================
+\section{论文}
+
+\begin{enumerate}[label={[\arabic*]}, leftmargin=32pt, itemsep=4pt]
+  \item \textbf{Inference in the Shadows: Taming Memory Bandwidth Contention in Mobile LLM Inference with Sereno} \\
+  \textbf{Tong Xin}, Xinrui Shi, Mingkai Dong, Zeyu Mi \\
+  \textit{OSDI'26 (CCF-A) Under Review}
+
+  \item \textbf{SwitchFS: Asynchronous Metadata Updates for Distributed Filesystems with In-Network Coordination} \\
+  Jingwei Xu, Mingkai Dong, Qiulin Tian, Ziyi Tian, \textbf{Tong Xin}, Haibo Chen \\
+  \textit{EuroSys'26 (CCF-A) / Chinasys'25 winter poster}
+
+  \item \textbf{Parer: Boosting EROFS Image Creation With Parallelism and Reproducibility} \\
+  Yifan Zhao, \textbf{Tong Xin}, Mingkai Dong \\
+  \textit{Internetware'24 (CCF-C)}
+\end{enumerate}
+
+\section{开源贡献}
+\cventry{PowerServe：高性能手机 LLM 推理框架（核心贡献者 / Core Contributor）}{2024年 -- 至今}
+[open-source LLM inference, mobile/heterogeneous hardware, NPU speculative inference]
+[
+\github{PowerServe}[https://github.com/powerserve-project/PowerServe]
+]
+\begin{itemize}
+  \item 作为\textbf{core contributor}参与 PowerServe 核心模块设计与实现，这是一个高性能、易用的手机 LLM 推理框架，支持一键编译与部署，后端支持 CPU / 骁龙 NPU，并提供对 NPU speculative inference 的支持，适用于 Android/HarmonyOS NEXT 等平台。
+  \item 主要职责包括参与核心推理执行引擎实现与优化，使 PowerServe 能在移动 NPU 上高效执行 LLM 模型；
+  \item 实现 speculative decoding 模块，并且根据 NPU 特点对 speculative decoding 进行优化；
+  \item 协助维护项目架构设计与文档整理，提高项目可用性与社区贡献质量。
+\end{itemize}
+
+% ======================
+\section{竞赛荣誉与奖励}
+\begin{itemize}
+  \item 全国信息学奥林匹克联赛（NOIP）一等奖 $\times$4（2017$\sim$2020）\iconlink{https://oier.baoshuo.dev/oier/36631}
+  \item CCF CSP认证：全国前1.2\%
+  \item 上海市优秀毕业生（top 3\%）
+  \item 上海交通大学 校级奖学金及荣誉称号：共 7 次
+  \item CCF上海交通大学学生分会 主席（2026年1月起）
+  \item “互联网+”竞赛上海市银奖（2023）
+\end{itemize}
+
+
+\end{document}
