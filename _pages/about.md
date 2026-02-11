@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+subtitle: PhD Student at **IPADS**, Shanghai Jiao Tong University.
 
 profile:
   align: right
@@ -27,10 +27,12 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am an undergraduate student majoring in Information Engineering at **Shanghai Jiao Tong University (SJTU)**. Currently, I am a research intern at the **Institute of Parallel and Distributed Systems (IPADS)**, under the supervision of Prof. [Mingkai Dong](https://ipads.se.sjtu.edu.cn/pub/member/mingkai_dong).
+I am a PhD student at the **Institute of Parallel and Distributed Systems (IPADS)**, **Shanghai Jiao Tong University (SJTU)**, advised by Prof. [Haibo Chen](https://ipads.se.sjtu.edu.cn/pub/member/haibo_chen) and Prof. [Mingkai Dong](https://ipads.se.sjtu.edu.cn/pub/member/mingkai_dong). I received my B.Eng. degree in Information Engineering from SJTU in 2025.
 
-My research interests primarily focus on **Storage Systems** and **File Systems**, including traditional file systems (e.g., XFS, F2FS), distributed file systems, and emerging technologies like DNA storage. I am also broadly interested in various areas of **Computer Systems**.
+My research interests primarily focus on **MLsys**, **AI Infrastructure**, and **Operating Systems**. Currently, I am working on optimizing on-device LLM inference and resource management for mobile systems.
 
-Previously, I worked on memory management mechanisms for hybrid memory architectures (DRAM-NVM) and parallelizing EROFS image creation. I have a strong background in algorithms and data structures, having won first prizes in the National Olympiad in Informatics in Provinces (NOIP).
+I am a core contributor to [**PowerServe**](https://github.com/powerserve-project/PowerServe), a high-performance LLM inference framework for mobile devices. My recent work **Sereno** (under review at OSDI'26) focuses on taming memory bandwidth contention in mobile LLM inference.
+
+I have a strong background in algorithms and data structures, having won first prizes in the National Olympiad in Informatics in Provinces (NOIP) for four consecutive years. I am also the Chairman of the CCF SJTU Student Chapter (starting Jan 2026).
 
 Outside of research, I am the captain of the Badminton Team of the School of Electronic Information and Electrical Engineering (SEIEE) at SJTU.
