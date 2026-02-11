@@ -22,7 +22,7 @@ announcements:
   limit: 5 # leave blank to include all the news in the `_news` folder
 
 latest_posts:
-  enabled: true
+  enabled: false
   scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
   limit: 3 # leave blank to include all the blog posts
 ---
@@ -36,3 +36,15 @@ I am a core contributor to [**PowerServe**](https://github.com/powerserve-projec
 I have a strong background in algorithms and data structures, having won first prizes in the National Olympiad in Informatics in Provinces (NOIP) for four consecutive years. I am also the Chairman of the CCF SJTU Student Chapter (starting Jan 2026).
 
 Outside of research, I am the captain of the Badminton Team of the School of Electronic Information and Electrical Engineering (SEIEE) at SJTU.
+
+## Awards
+
+{% assign awards = site.data.cv.cv.sections.Awards %}
+{% if awards and awards.size > 0 %}
+  {% for award in awards %}
+- **{{ award.title }}**
+  {% if award.date %} ({{ award.date }}){% endif %}
+  {% if award.awarder %} - {{ award.awarder }}{% endif %}
+  {% if award.summary %}: {{ award.summary }}{% endif %}
+  {% endfor %}
+{% endif %}
