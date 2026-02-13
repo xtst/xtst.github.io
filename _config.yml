@@ -6,8 +6,8 @@ title: Tong XIN (辛统) # the website title (if blank, full name will be used i
 first_name: Tong
 # middle_name:
 last_name: Xin
-contact_note: >
-  You can reach me via these channels.
+# contact_note: >
+#   You can reach me via these channels.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   PhD student at Shanghai Jiao Tong University (SJTU), IPADS laboratory. Research interests include MLsys, AI Infrastructure, and Operating Systems.
 footer_text: >
