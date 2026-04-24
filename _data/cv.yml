@@ -58,6 +58,7 @@ cv:
         end_date: Present
         summary: Working on systems for AI and file systems.
         highlights:
+          - "Inference in the Shadows: Taming Memory Bandwidth Contention in Mobile LLM Inference with Sereno (OSDI'26, first author)"
           - "Parer: Boosting EROFS image creation with parallelism (Internetware'24)"
           - "PowerServe: High-performance mobile LLM inference framework (Core Contributor)"
 
