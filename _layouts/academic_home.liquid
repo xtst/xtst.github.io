@@ -552,8 +552,14 @@
                     {% endif %}
                   </div>
                   {% if item.highlights %}
-                    {% for highlight in item.highlights limit: 2 %}
-                      <div class="entry-note">{{ highlight }}</div>
+                    {% assign shown_highlights = 0 %}
+                    {% for highlight in item.highlights %}
+                      {% unless highlight contains 'GPA:' %}
+                        {% if shown_highlights < 2 %}
+                          <div class="entry-note">{{ highlight }}</div>
+                          {% assign shown_highlights = shown_highlights | plus: 1 %}
+                        {% endif %}
+                      {% endunless %}
                     {% endfor %}
                   {% endif %}
                 </div>

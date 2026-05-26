@@ -46,6 +46,6 @@ miscellaneous:
 
 I am a PhD student at the **Institute of Parallel and Distributed Systems (IPADS)**, **Shanghai Jiao Tong University (SJTU)**, advised by Prof. [Haibo Chen](https://ipads.se.sjtu.edu.cn/pub/members/haibo_chen) and Prof. [Mingkai Dong](https://dong.mk/). I received my B.Eng. degree in Information Engineering from SJTU in 2025.
 
-My research interests primarily focus on **MLsys**, **AI Infrastructure**, and **Operating Systems**. Currently, I am working on optimizing system mismatches in on-device LLM inference and agentic systems.
+My research interests primarily focus on **MLsys**, **AI Infrastructure**, and **Operating Systems**. Recently, I have been working on system mismatches in on-device LLM inference, including **Sereno** (**OSDI'26**), which tames memory bandwidth contention for mobile LLM serving.
 
 I am a core contributor to [**PowerServe**](https://github.com/powerserve-project/PowerServe), a high-performance LLM inference framework for mobile devices.
