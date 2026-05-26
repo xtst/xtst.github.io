@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="{{ site.lang }}">
+  <head>
+    {% include head.liquid %}
+  </head>
+
+  <body class="academic-home-body">
+    <main class="academic-home" role="main">
+      <aside class="academic-home__sidebar" aria-label="Profile">
+        {% if page.profile and page.profile.image %}
+          {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
+          <div class="academic-home__avatar">
+            <img
+              src="{{ profile_image_path | relative_url | bust_file_cache }}"
+              alt="{{ site.title }}"
+              width="220"
+              height="220"
+            >
+          </div>
+        {% endif %}
+
+        <h1>{{ site.title }}</h1>
+        {% if page.subtitle %}
+          <p class="academic-home__subtitle">{{ page.subtitle }}</p>
+        {% endif %}
+
+        <div class="academic-home__icons" aria-label="Profile links">
+          <a href="{{ '/' | relative_url }}" aria-label="Home" title="Home"><i class="fa-solid fa-house"></i></a>
+          {% if site.data.socials.github_username %}
+            <a href="https://github.com/{{ site.data.socials.github_username }}" aria-label="GitHub" title="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+          {% endif %}
+          {% if site.data.socials.email %}
+            <a href="mailto:{{ site.data.socials.email }}" aria-label="Email" title="Email"><i class="fa-solid fa-envelope"></i></a>
+          {% endif %}
+          {% if site.data.socials.scholar_userid %}
+            <a
+              href="https://scholar.google.com/citations?user={{ site.data.socials.scholar_userid }}"
+              aria-label="Google Scholar"
+              title="Google Scholar"
+            >
+              <i class="ai ai-google-scholar"></i>
+            </a>
+          {% endif %}
+          {% if site.data.socials.x and site.data.socials.x.url %}
+            <a href="{{ site.data.socials.x.url }}" aria-label="X" title="X"><i class="fa-brands fa-x-twitter"></i></a>
+          {% endif %}
+          <a href="{{ '/cv/' | relative_url }}" aria-label="CV" title="CV"><span>[CV]</span></a>
+          {% if site.enable_darkmode %}
+            <button id="light-toggle" title="Change theme" type="button" aria-label="Change theme">
+              <i class="fa-half-sun-moon" id="light-toggle-system"></i>
+              <i class="fa-solid fa-moon" id="light-toggle-dark"></i>
+              <i class="fa-solid fa-sun" id="light-toggle-light"></i>
+            </button>
+          {% endif %}
+        </div>
+
+        {% if page.profile.more_info %}
+          <div class="academic-home__affiliation">{{ page.profile.more_info }}</div>
+        {% endif %}
+
+        {% if page.profile.contact %}
+          <section class="academic-home__contact" aria-label="Contact">
+            <h2>Contact:</h2>
+            <p>{{ page.profile.contact }}</p>
+          </section>
+        {% elsif site.data.socials.email %}
+          <section class="academic-home__contact" aria-label="Contact">
+            <h2>Contact:</h2>
+            <p>{{ site.data.socials.email }}</p>
+          </section>
+        {% endif %}
+
+        {% if page.sidebar_links %}
+          <nav class="academic-home__nav" aria-label="Main pages">
+            {% for link in page.sidebar_links %}
+              <a href="{{ link.url | relative_url }}">{{ link.title }}</a>
+            {% endfor %}
+          </nav>
+        {% endif %}
+      </aside>
+
+      <article class="academic-home__content">
+        <section id="about" class="academic-home__section academic-home__about">
+          {{ content }}
+        </section>
+
+        {% if page.announcements and page.announcements.enabled %}
+          <section id="news" class="academic-home__section">
+            <h2>
+              <a href="{{ '/news/' | relative_url }}">News</a>
+            </h2>
+            {% include news.liquid limit=true %}
+          </section>
+        {% endif %}
+
+        {% assign education = site.data.cv.cv.sections.Education %}
+        {% if education and education.size > 0 %}
+          <section id="education" class="academic-home__section">
+            <h2>Education</h2>
+            <div class="academic-home__entries">
+              {% for item in education %}
+                <div class="academic-home__entry">
+                  <div class="academic-home__entry-title">
+                    {% if item.url %}
+                      <a href="{{ item.url }}">{{ item.institution }}</a>
+                    {% else %}
+                      {{ item.institution }}
+                    {% endif %}
+                    {% if item.location %}
+                      <span>{{ item.location }}</span>
+                    {% endif %}
+                  </div>
+                  <div class="academic-home__entry-meta">
+                    {{ item.studyType }}
+                    {% if item.area %}
+                      in {{ item.area }}
+                    {% endif %}
+                    {% if item.start_date or item.end_date %}
+                      &bull; {{ item.start_date }} - {{ item.end_date }}
+                    {% endif %}
+                  </div>
+                  {% if item.highlights %}
+                    {% for highlight in item.highlights limit: 2 %}
+                      <div class="academic-home__entry-note">{{ highlight }}</div>
+                    {% endfor %}
+                  {% endif %}
+                </div>
+              {% endfor %}
+            </div>
+          </section>
+        {% endif %}
+
+        {% assign cv_projects = site.data.cv.cv.sections.Projects %}
+        {% if cv_projects and cv_projects.size > 0 %}
+          <section id="projects" class="academic-home__section">
+            <h2>Selected Projects</h2>
+            <div class="academic-home__entries">
+              {% for project in cv_projects %}
+                <div class="academic-home__entry">
+                  <div class="academic-home__entry-title">
+                    {% if project.url %}
+                      <a href="{{ project.url }}">{{ project.name }}</a>
+                    {% else %}
+                      {{ project.name }}
+                    {% endif %}
+                  </div>
+                  {% if project.summary %}
+                    <div class="academic-home__entry-meta">{{ project.summary }}</div>
+                  {% endif %}
+                  {% if project.highlights %}
+                    {% for highlight in project.highlights limit: 2 %}
+                      <div class="academic-home__entry-note">{{ highlight }}</div>
+                    {% endfor %}
+                  {% endif %}
+                </div>
+              {% endfor %}
+            </div>
+          </section>
+        {% endif %}
+
+        {% if page.selected_papers %}
+          <section id="publications" class="academic-home__section academic-home__publications">
+            <h2>
+              <a href="{{ '/publications/' | relative_url }}">Selected Publications</a>
+            </h2>
+            {% include selected_papers.liquid %}
+          </section>
+        {% endif %}
+
+        {% if page.awards and page.awards.enabled %}
+          <section id="awards" class="academic-home__section">
+            <h2>Awards</h2>
+            {% include awards.liquid %}
+          </section>
+        {% endif %}
+
+        {% if page.miscellaneous %}
+          <section id="miscellaneous" class="academic-home__section">
+            <h2>Miscellaneous</h2>
+            <ul class="academic-home__misc">
+              {% for item in page.miscellaneous %}
+                <li>{{ item | markdownify | remove: '<p>' | remove: '</p>' }}</li>
+              {% endfor %}
+            </ul>
+          </section>
+        {% endif %}
+
+        <footer class="academic-home__footer">
+          &copy; {{ site.first_name }}
+          {{ site.last_name }}
+          {{ site.time | date: '%Y' }}
+        </footer>
+      </article>
+    </main>
+
+    {% include scripts.liquid %}
+  </body>
+</html>
