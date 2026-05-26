@@ -1,38 +1,469 @@
 <!doctype html>
-<html lang="{{ site.lang }}">
+<html lang="{{ site.lang | default: 'en' }}">
   <head>
-    {% include head.liquid %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="{{ site.description | strip_html | strip_newlines | escape }}">
+    <title>{{ site.title }}</title>
+    {% if site.icon.size <= 4 %}
+      <link
+        rel="shortcut icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>{{ site.icon }}</text></svg>"
+      >
+    {% elsif site.icon != blank %}
+      <link rel="shortcut icon" href="{{ site.icon | prepend: '/assets/img/' | relative_url }}">
+    {% endif %}
+    <link rel="canonical" href="{{ page.url | replace: 'index.html', '' | absolute_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/academicons.min.css' | relative_url }}">
+    <style>
+      @font-face {
+        font-family: "Font Awesome 7 Free";
+        font-style: normal;
+        font-weight: 900;
+        font-display: block;
+        src: url("{{ '/assets/webfonts/fa-solid-900.woff2' | relative_url }}") format("woff2");
+      }
+
+      @font-face {
+        font-family: "Font Awesome 7 Brands";
+        font-style: normal;
+        font-weight: 400;
+        font-display: block;
+        src: url("{{ '/assets/webfonts/fa-brands-400.woff2' | relative_url }}") format("woff2");
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 50px;
+        color: #3f3f3f;
+        background: #fff;
+        font-family: "lucida grande", "lucida sans unicode", lucida, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        line-height: 1.5;
+        font-weight: 400;
+      }
+
+      a {
+        color: #0055aa;
+        text-decoration: none;
+      }
+
+      a:hover {
+        color: #003f80;
+        text-decoration: underline;
+      }
+
+      p,
+      ul,
+      ol,
+      table {
+        margin: 0 0 0.7rem;
+      }
+
+      strong {
+        color: #222;
+        font-weight: 700;
+      }
+
+      img {
+        max-width: 100%;
+      }
+
+      .wrapper {
+        width: 860px;
+        margin: 0 auto;
+      }
+
+      header {
+        float: left;
+        position: fixed;
+        width: 230px;
+        text-align: center;
+      }
+
+      section.content {
+        float: right;
+        width: 600px;
+        padding-bottom: 2rem;
+      }
+
+      .avatar {
+        width: 180px;
+        height: 180px;
+        margin: 0 auto 16px;
+        overflow: hidden;
+        border-radius: 100%;
+      }
+
+      .avatar img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      h1 {
+        margin: 0 0 0.45rem;
+        color: #222;
+        font-size: 250%;
+        font-weight: 700;
+        line-height: 1.05;
+      }
+
+      h2,
+      h3 {
+        margin-top: 0.7em;
+        margin-bottom: 0.3em;
+        padding-top: 0.5em;
+        padding-bottom: 0.2em;
+        border-bottom: 1px solid #aaa;
+        color: #393939;
+        line-height: 1;
+      }
+
+      h2 {
+        padding-top: 0.8em;
+        font-size: 160%;
+      }
+
+      h3 {
+        font-size: 110%;
+        border-bottom: none;
+      }
+
+      h4 {
+        margin: 1.2rem 0 0.35rem;
+        color: #222;
+        font-size: 110%;
+      }
+
+      .subtitle,
+      .affiliation {
+        color: #555;
+      }
+
+      .subtitle {
+        margin-bottom: 1rem;
+      }
+
+      .affiliation p {
+        margin: 0 0 0.55rem;
+      }
+
+      .icons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0.7rem;
+        margin-bottom: 1rem;
+      }
+
+      .icons a {
+        color: #222;
+        line-height: 1;
+      }
+
+      .icons a:hover {
+        color: #0055aa;
+        text-decoration: none;
+      }
+
+      .icon-solid,
+      .icon-brand {
+        display: inline-block;
+        font-style: normal;
+        font-size: 1.15rem;
+        line-height: 1;
+      }
+
+      .icon-solid {
+        font-family: "Font Awesome 7 Free";
+        font-weight: 900;
+      }
+
+      .icon-brand {
+        font-family: "Font Awesome 7 Brands";
+        font-weight: 400;
+      }
+
+      .text-link {
+        font-size: 0.95rem;
+        font-weight: 700;
+      }
+
+      .contact p {
+        font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+        font-size: 0.84rem;
+        line-height: 1.45;
+      }
+
+      .quick-links {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.35rem 0.75rem;
+        margin-top: 1rem;
+        font-size: 0.95rem;
+      }
+
+      .news .table-responsive {
+        max-height: none !important;
+        overflow: visible;
+      }
+
+      .news table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      .news th,
+      .news td {
+        padding: 0.25rem 0;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      .news th {
+        width: 7.5rem !important;
+        padding-right: 1rem;
+        color: #444;
+        font-weight: 700;
+        white-space: nowrap;
+      }
+
+      .entries {
+        display: grid;
+        gap: 0.9rem;
+      }
+
+      .entry-title {
+        color: #222;
+        font-weight: 700;
+      }
+
+      .entry-title span,
+      .entry-meta,
+      .entry-note {
+        color: #666;
+      }
+
+      .entry-note {
+        font-size: 0.95rem;
+      }
+
+      .publications {
+        margin-top: 0;
+      }
+
+      .publications h1,
+      .publications h2.bibliography {
+        display: none;
+      }
+
+      .publications ol.bibliography {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+
+      .publications ol.bibliography > li {
+        margin-bottom: 1.2rem;
+      }
+
+      .publications .row {
+        display: flex;
+        gap: 1rem;
+        margin: 0;
+      }
+
+      .publications .abbr {
+        flex: 0 0 150px;
+        max-width: 150px;
+        padding: 0;
+      }
+
+      .publications .abbr abbr {
+        display: inline-block;
+        min-width: 4.5rem;
+        padding: 0.12rem 0.35rem;
+        margin-bottom: 0.35rem;
+        color: #fff;
+        background: #777;
+        border-radius: 3px;
+        font-size: 0.72rem;
+        font-weight: 700;
+        text-align: center;
+      }
+
+      .publications figure {
+        margin: 0;
+      }
+
+      .publications .preview {
+        display: block;
+        width: 150px;
+        max-height: 115px;
+        object-fit: contain;
+        object-position: center;
+        border: 1px solid #e6e6e6;
+        background: #fff;
+      }
+
+      .publications .row > div[id] {
+        flex: 1 1 0;
+        min-width: 0;
+      }
+
+      .publications .title {
+        color: #222;
+        font-weight: 700;
+        line-height: 1.3;
+      }
+
+      .publications .author,
+      .publications .periodical {
+        color: #666;
+        font-size: 0.93rem;
+        line-height: 1.4;
+      }
+
+      .publications .links {
+        margin-top: 0.25rem;
+      }
+
+      .publications .btn {
+        display: inline;
+        padding: 0;
+        border: 0;
+        color: #0055aa;
+        background: transparent;
+        box-shadow: none;
+        font-size: 0.88rem;
+      }
+
+      .publications .btn::after {
+        content: " /";
+        color: #777;
+      }
+
+      .publications .btn:last-child::after {
+        content: "";
+      }
+
+      .publications .hidden {
+        display: none;
+      }
+
+      .awards ul,
+      .misc {
+        padding-left: 1.2rem;
+      }
+
+      .awards li,
+      .misc li {
+        margin-bottom: 0.35rem;
+      }
+
+      footer {
+        margin-top: 2.5rem;
+        color: #aaa;
+        font-size: 0.85rem;
+      }
+
+      @media print, screen and (max-width: 960px) {
+        body {
+          padding: 28px 24px;
+        }
+
+        .wrapper {
+          width: auto;
+          max-width: 760px;
+        }
+
+        header,
+        section.content {
+          float: none;
+          position: static;
+          width: 100%;
+        }
+
+        header {
+          margin-bottom: 1.7rem;
+        }
+
+        .avatar {
+          width: 165px;
+          height: 165px;
+        }
+      }
+
+      @media print, screen and (max-width: 560px) {
+        body {
+          padding: 18px 14px;
+        }
+
+        h1 {
+          font-size: 205%;
+        }
+
+        .news th,
+        .news td {
+          display: block;
+          width: 100% !important;
+          padding: 0;
+        }
+
+        .news th {
+          margin-top: 0.55rem;
+        }
+
+        .publications .row {
+          display: block;
+        }
+
+        .publications .abbr {
+          max-width: none;
+          margin-bottom: 0.45rem;
+        }
+
+        .publications .preview {
+          width: 100%;
+          max-height: 150px;
+        }
+      }
+    </style>
   </head>
 
-  <body class="academic-home-body">
-    <main class="academic-home" role="main">
-      <aside class="academic-home__sidebar" aria-label="Profile">
+  <body>
+    <div class="wrapper">
+      <header>
         {% if page.profile and page.profile.image %}
           {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
-          <div class="academic-home__avatar">
-            <img
-              src="{{ profile_image_path | relative_url | bust_file_cache }}"
-              alt="{{ site.title }}"
-              width="220"
-              height="220"
-            >
+          <div class="avatar">
+            <img src="{{ profile_image_path | relative_url }}" alt="{{ site.title }}">
           </div>
         {% endif %}
 
         <h1>{{ site.title }}</h1>
         {% if page.subtitle %}
-          <p class="academic-home__subtitle">{{ page.subtitle }}</p>
+          <p class="subtitle">{{ page.subtitle }}</p>
         {% endif %}
 
-        <div class="academic-home__icons" aria-label="Profile links">
-          <a href="{{ '/' | relative_url }}" aria-label="Home" title="Home"><i class="fa-solid fa-house"></i></a>
+        <nav class="icons" aria-label="Profile links">
+          <a href="{{ '/' | relative_url }}" aria-label="Home" title="Home"><i class="icon-solid">&#xf015;</i></a>
           {% if site.data.socials.github_username %}
             <a href="https://github.com/{{ site.data.socials.github_username }}" aria-label="GitHub" title="GitHub">
-              <i class="fa-brands fa-github"></i>
+              <i class="icon-brand">&#xf09b;</i>
             </a>
           {% endif %}
           {% if site.data.socials.email %}
-            <a href="mailto:{{ site.data.socials.email }}" aria-label="Email" title="Email"><i class="fa-solid fa-envelope"></i></a>
+            <a href="mailto:{{ site.data.socials.email }}" aria-label="Email" title="Email"><i class="icon-solid">&#xf0e0;</i></a>
           {% endif %}
           {% if site.data.socials.scholar_userid %}
             <a
@@ -44,65 +475,57 @@
             </a>
           {% endif %}
           {% if site.data.socials.x and site.data.socials.x.url %}
-            <a href="{{ site.data.socials.x.url }}" aria-label="X" title="X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="{{ site.data.socials.x.url }}" aria-label="X" title="X"><i class="icon-brand">&#xe61b;</i></a>
           {% endif %}
-          <a href="{{ '/cv/' | relative_url }}" aria-label="CV" title="CV"><span>[CV]</span></a>
-          {% if site.enable_darkmode %}
-            <button id="light-toggle" title="Change theme" type="button" aria-label="Change theme">
-              <i class="fa-half-sun-moon" id="light-toggle-system"></i>
-              <i class="fa-solid fa-moon" id="light-toggle-dark"></i>
-              <i class="fa-solid fa-sun" id="light-toggle-light"></i>
-            </button>
+          {% if site.data.socials.xiaohongshu and site.data.socials.xiaohongshu.url %}
+            <a class="text-link" href="{{ site.data.socials.xiaohongshu.url }}" aria-label="Xiaohongshu" title="Xiaohongshu">XHS</a>
+          {% endif %}
+          {% if site.data.socials.zhihu and site.data.socials.zhihu.url %}
+            <a class="text-link" href="{{ site.data.socials.zhihu.url }}" aria-label="Zhihu" title="Zhihu">知乎</a>
+          {% endif %}
+          <a class="text-link" href="{{ '/cv/' | relative_url }}" aria-label="CV" title="CV">[CV]</a>
+        </nav>
+
+        {% if page.profile.more_info %}
+          <div class="affiliation">{{ page.profile.more_info }}</div>
+        {% endif %}
+
+        <div class="contact">
+          <h4>Contact:</h4>
+          {% if page.profile.contact %}
+            <p>{{ page.profile.contact }}</p>
+          {% elsif site.data.socials.email %}
+            <p>{{ site.data.socials.email }}</p>
           {% endif %}
         </div>
 
-        {% if page.profile.more_info %}
-          <div class="academic-home__affiliation">{{ page.profile.more_info }}</div>
-        {% endif %}
-
-        {% if page.profile.contact %}
-          <section class="academic-home__contact" aria-label="Contact">
-            <h2>Contact:</h2>
-            <p>{{ page.profile.contact }}</p>
-          </section>
-        {% elsif site.data.socials.email %}
-          <section class="academic-home__contact" aria-label="Contact">
-            <h2>Contact:</h2>
-            <p>{{ site.data.socials.email }}</p>
-          </section>
-        {% endif %}
-
         {% if page.sidebar_links %}
-          <nav class="academic-home__nav" aria-label="Main pages">
+          <nav class="quick-links" aria-label="Main pages">
             {% for link in page.sidebar_links %}
               <a href="{{ link.url | relative_url }}">{{ link.title }}</a>
             {% endfor %}
           </nav>
         {% endif %}
-      </aside>
+      </header>
 
-      <article class="academic-home__content">
-        <section id="about" class="academic-home__section academic-home__about">
-          {{ content }}
-        </section>
+      <section class="content">
+        <section id="about">{{ content }}</section>
 
         {% if page.announcements and page.announcements.enabled %}
-          <section id="news" class="academic-home__section">
-            <h2>
-              <a href="{{ '/news/' | relative_url }}">News</a>
-            </h2>
+          <section id="news">
+            <h2><a href="{{ '/news/' | relative_url }}">News</a></h2>
             {% include news.liquid limit=true %}
           </section>
         {% endif %}
 
         {% assign education = site.data.cv.cv.sections.Education %}
         {% if education and education.size > 0 %}
-          <section id="education" class="academic-home__section">
+          <section id="education">
             <h2>Education</h2>
-            <div class="academic-home__entries">
+            <div class="entries">
               {% for item in education %}
-                <div class="academic-home__entry">
-                  <div class="academic-home__entry-title">
+                <div class="entry">
+                  <div class="entry-title">
                     {% if item.url %}
                       <a href="{{ item.url }}">{{ item.institution }}</a>
                     {% else %}
@@ -112,7 +535,7 @@
                       <span>{{ item.location }}</span>
                     {% endif %}
                   </div>
-                  <div class="academic-home__entry-meta">
+                  <div class="entry-meta">
                     {{ item.studyType }}
                     {% if item.area %}
                       in {{ item.area }}
@@ -123,7 +546,7 @@
                   </div>
                   {% if item.highlights %}
                     {% for highlight in item.highlights limit: 2 %}
-                      <div class="academic-home__entry-note">{{ highlight }}</div>
+                      <div class="entry-note">{{ highlight }}</div>
                     {% endfor %}
                   {% endif %}
                 </div>
@@ -134,12 +557,12 @@
 
         {% assign cv_projects = site.data.cv.cv.sections.Projects %}
         {% if cv_projects and cv_projects.size > 0 %}
-          <section id="projects" class="academic-home__section">
+          <section id="projects">
             <h2>Selected Projects</h2>
-            <div class="academic-home__entries">
+            <div class="entries">
               {% for project in cv_projects %}
-                <div class="academic-home__entry">
-                  <div class="academic-home__entry-title">
+                <div class="entry">
+                  <div class="entry-title">
                     {% if project.url %}
                       <a href="{{ project.url }}">{{ project.name }}</a>
                     {% else %}
@@ -147,11 +570,11 @@
                     {% endif %}
                   </div>
                   {% if project.summary %}
-                    <div class="academic-home__entry-meta">{{ project.summary }}</div>
+                    <div class="entry-meta">{{ project.summary }}</div>
                   {% endif %}
                   {% if project.highlights %}
                     {% for highlight in project.highlights limit: 2 %}
-                      <div class="academic-home__entry-note">{{ highlight }}</div>
+                      <div class="entry-note">{{ highlight }}</div>
                     {% endfor %}
                   {% endif %}
                 </div>
@@ -161,25 +584,23 @@
         {% endif %}
 
         {% if page.selected_papers %}
-          <section id="publications" class="academic-home__section academic-home__publications">
-            <h2>
-              <a href="{{ '/publications/' | relative_url }}">Selected Publications</a>
-            </h2>
+          <section id="publications">
+            <h2><a href="{{ '/publications/' | relative_url }}">Selected Publications</a></h2>
             {% include selected_papers.liquid %}
           </section>
         {% endif %}
 
         {% if page.awards and page.awards.enabled %}
-          <section id="awards" class="academic-home__section">
+          <section id="awards" class="awards">
             <h2>Awards</h2>
             {% include awards.liquid %}
           </section>
         {% endif %}
 
         {% if page.miscellaneous %}
-          <section id="miscellaneous" class="academic-home__section">
+          <section id="miscellaneous">
             <h2>Miscellaneous</h2>
-            <ul class="academic-home__misc">
+            <ul class="misc">
               {% for item in page.miscellaneous %}
                 <li>{{ item | markdownify | remove: '<p>' | remove: '</p>' }}</li>
               {% endfor %}
@@ -187,14 +608,12 @@
           </section>
         {% endif %}
 
-        <footer class="academic-home__footer">
+        <footer>
           &copy; {{ site.first_name }}
           {{ site.last_name }}
           {{ site.time | date: '%Y' }}
         </footer>
-      </article>
-    </main>
-
-    {% include scripts.liquid %}
+      </section>
+    </div>
   </body>
 </html>
