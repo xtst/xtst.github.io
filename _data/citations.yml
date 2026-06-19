@@ -1,12 +1,12 @@
 metadata:
-  last_updated: '2026-05-01'
+  last_updated: '2026-06-19'
 papers:
   ujdcf9oAAAAJ:2osOgNQ5qMEC:
     citations: 1
     title: 'SwitchFS: Asynchronous Metadata Updates for Distributed Filesystems with In-Network Coordination'
-    year: '2024'
+    year: '2026'
   ujdcf9oAAAAJ:d1gkVwhDpl0C:
-    citations: 1
+    citations: 2
     title: 'AsyncFS: Metadata Updates Made Asynchronous for Distributed Filesystems with In-Network Coordination'
     year: '2024'
   ujdcf9oAAAAJ:u-x6o8ySG0sC:
