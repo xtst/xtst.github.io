@@ -30,6 +30,9 @@ ninja.data = [{
           section: "News",},{id: "news-our-paper-inference-in-the-shadows-taming-memory-bandwidth-contention-in-mobile-llm-inference-with-sereno-has-been-accepted-to-osdi-2026",
           title: 'Our paper Inference in the Shadows: Taming Memory Bandwidth Contention in Mobile LLM...',
           description: "",
+          section: "News",},{id: "news-a-paper-i-contributed-to-starfishos-revisiting-single-system-image-on-cxl-with-state-partitioned-microkernel-has-been-accepted-to-sosp-2026",
+          title: 'A paper I contributed to, StarfishOS: Revisiting Single System Image on CXL with...',
+          description: "",
           section: "News",},{
         id: 'social-cv',
         title: 'CV',
