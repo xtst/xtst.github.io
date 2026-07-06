@@ -30,6 +30,12 @@ docker compose up --build
 docker compose down
 ```
 
+### GitHub Deployment
+
+This site is deployed through GitHub. For normal content and configuration
+updates, commit the changes and push to `main`; GitHub will build and deploy the
+site automatically. No separate manual deployment command is required.
+
 ### Pre-Commit Checklist
 
 Before every commit, you **must** run these steps:
