@@ -1,8 +1,9 @@
 <div class="awards">
   {% assign awards = site.data.cv.cv.sections.Awards %}
   {% if awards and awards.size > 0 %}
+    {% assign awards_limit = include.limit | default: awards.size %}
     <ul>
-      {% for award in awards %}
+      {% for award in awards limit: awards_limit %}
         <li>
           <strong>{{ award.title }}</strong>
           {% if award.date %} ({{ award.date }}){% endif %}
