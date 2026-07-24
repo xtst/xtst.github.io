@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-I graduated with my B.Eng. degree from **Shanghai Jiao Tong University** and was honored as a **Shanghai Outstanding Graduate**.
+I received my B.Eng. degree from **SJTU** and was honored as a **Shanghai Outstanding Graduate**.

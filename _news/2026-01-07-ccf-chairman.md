@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-I have been elected as the **Chairman of the CCF SJTU Student Chapter** (starting Jan 2026)!
+I was elected **Chairman of the CCF SJTU Student Chapter**.

@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-A paper I contributed to, **StarfishOS: Revisiting Single System Image on CXL with State-partitioned Microkernel**, has been accepted to **SOSP 2026**!
+A paper I contributed to, **StarfishOS**, has been accepted to **SOSP 2026**!

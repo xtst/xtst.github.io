@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Our paper **SwitchFS: Asynchronous Metadata Updates for Distributed Filesystems with In-Network Coordination** has been accepted to **EuroSys 2026**!
+Our paper **SwitchFS** has been accepted to **EuroSys 2026**!

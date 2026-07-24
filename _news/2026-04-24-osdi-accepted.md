@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Our paper **Inference in the Shadows: Taming Memory Bandwidth Contention in Mobile LLM Inference with Sereno** has been accepted to **OSDI 2026**!
+Our paper **Sereno** has been accepted to **OSDI 2026**!
