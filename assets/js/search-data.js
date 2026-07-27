@@ -30,8 +30,8 @@ ninja.data = [{
           section: "News",},{id: "news-our-paper-sereno-has-been-accepted-to-osdi-2026",
           title: 'Our paper Sereno has been accepted to OSDI 2026!',
           description: "",
-          section: "News",},{id: "news-a-paper-i-contributed-to-starfishos-has-been-accepted-to-sosp-2026",
-          title: 'A paper I contributed to, StarfishOS, has been accepted to SOSP 2026!',
+          section: "News",},{id: "news-our-paper-starfishos-has-been-accepted-to-sosp-2026",
+          title: 'Our paper StarfishOS has been accepted to SOSP 2026!',
           description: "",
           section: "News",},{
         id: 'social-cv',
