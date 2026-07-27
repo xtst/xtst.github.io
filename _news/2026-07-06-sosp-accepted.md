@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-A paper I contributed to, **StarfishOS**, has been accepted to **SOSP 2026**!
+Our paper **StarfishOS** has been accepted to **SOSP 2026**!

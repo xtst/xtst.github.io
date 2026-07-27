@@ -23,7 +23,7 @@ announcements:
 
 awards:
   enabled: true
-  limit: 3
+  limit: 4
 
 latest_posts:
   enabled: false
@@ -45,6 +45,8 @@ Prof. [Haibo Chen](https://ipads.se.sjtu.edu.cn/pub/members/haibo_chen) and
 Prof. [Mingkai Dong](https://dong.mk/). I received my B.Eng. degree in
 Information Engineering from SJTU in 2025.
 
-Previously, I worked on systems for on-device LLM inference, including resource
-management and high-performance inference runtimes. My broader interests span
-**ML systems** and **operating systems**.
+My current research focuses on building infrastructure for **AI agents** and
+**model training**, especially efficient post-training systems for LLMs and
+multimodal LLMs. Previously, I worked on systems for on-device LLM inference,
+including resource management and high-performance inference runtimes. My broader
+interests span **ML systems** and **operating systems**.
