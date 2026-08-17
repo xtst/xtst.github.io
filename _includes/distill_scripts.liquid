@@ -265,6 +265,17 @@
   ></script>
 {% endif %}
 
+{% if site.enable_visitor_counter %}
+  <!-- Public site-wide visitor counter -->
+  <script
+    {% if site.enable_cookie_consent %}
+      type="text/plain" data-category="analytics"
+    {% endif %}
+    defer
+    src="{{ '/assets/js/visitor-counter.js' | relative_url | bust_file_cache }}"
+  ></script>
+{% endif %}
+
 {% if site.enable_progressbar %}
   <!-- Scrolling Progress Bar -->
   <script defer src="{{ '/assets/js/progress-bar.js' | relative_url | bust_file_cache }}" type="text/javascript"></script>
