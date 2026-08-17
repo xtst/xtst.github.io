@@ -16,6 +16,14 @@
     {% endif %}
     <link rel="canonical" href="{{ page.url | replace: 'index.html', '' | absolute_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/academicons.min.css' | relative_url }}">
+    {% if site.enable_cookie_consent %}
+      <link
+        rel="stylesheet"
+        href="{{ site.third_party_libraries.vanilla-cookieconsent.url.css }}"
+        integrity="{{ site.third_party_libraries.vanilla-cookieconsent.integrity.css }}"
+        crossorigin="anonymous"
+      >
+    {% endif %}
     <style>
       @font-face {
         font-family: "Font Awesome 7 Free";
@@ -711,8 +719,48 @@
           &copy; {{ site.first_name }}
           {{ site.last_name }}
           {{ site.time | date: '%Y' }}
+          {% if site.enable_visitor_counter %}
+            <span id="site-visit-counter" hidden> · Total visits: <span id="busuanzi_site_pv"></span></span>
+          {% endif %}
         </footer>
       </section>
     </div>
+
+    {% if site.enable_cookie_consent %}
+      <script
+        defer
+        src="{{ site.third_party_libraries.vanilla-cookieconsent.url.js }}"
+        integrity="{{ site.third_party_libraries.vanilla-cookieconsent.integrity.js }}"
+        crossorigin="anonymous"
+      ></script>
+      <script defer src="{{ '/assets/js/cookie-consent-setup.js' | relative_url }}"></script>
+    {% endif %}
+
+    {% if site.enable_google_analytics %}
+      <script
+        {% if site.enable_cookie_consent %}
+          type="text/plain" data-category="analytics"
+        {% endif %}
+        async
+        src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"
+      ></script>
+      <script
+        {% if site.enable_cookie_consent %}
+          type="text/plain" data-category="analytics"
+        {% endif %}
+        defer
+        src="{{ '/assets/js/google-analytics-setup.js' | relative_url }}"
+      ></script>
+    {% endif %}
+
+    {% if site.enable_visitor_counter %}
+      <script
+        {% if site.enable_cookie_consent %}
+          type="text/plain" data-category="analytics"
+        {% endif %}
+        defer
+        src="{{ '/assets/js/visitor-counter.js' | relative_url }}"
+      ></script>
+    {% endif %}
   </body>
 </html>
