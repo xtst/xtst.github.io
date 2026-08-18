@@ -755,9 +755,6 @@
 
     {% if site.enable_visitor_counter %}
       <script
-        {% if site.enable_cookie_consent %}
-          type="text/plain" data-category="analytics"
-        {% endif %}
         defer
         src="{{ '/assets/js/visitor-counter.js' | relative_url }}"
       ></script>
