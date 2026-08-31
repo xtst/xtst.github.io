@@ -33,8 +33,8 @@ ninja.data = [{
           section: "News",},{id: "news-our-paper-starfishos-has-been-accepted-to-sosp-2026",
           title: 'Our paper StarfishOS has been accepted to SOSP 2026!',
           description: "",
-          section: "News",},{id: "news-i-presented-sereno-at-osdi-26-in-seattle",
-          title: 'I presented Sereno at OSDI ‘26 in Seattle.',
+          section: "News",},{id: "news-i-gave-the-oral-presentation-of-sereno-at-osdi-26-in-seattle",
+          title: 'I gave the oral presentation of Sereno at OSDI ‘26 in Seattle.',
           description: "",
           section: "News",},{
         id: 'social-cv',
