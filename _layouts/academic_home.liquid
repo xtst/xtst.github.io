@@ -41,15 +41,27 @@
         src: url("{{ '/assets/webfonts/fa-brands-400.woff2' | relative_url }}") format("woff2");
       }
 
+      :root {
+        --accent: #075aa8;
+        --accent-deep: #073f78;
+        --ink: #20272e;
+        --muted: #5e6872;
+        --line: #dfe6ec;
+        --surface: #fff;
+        --surface-soft: #f5f8fb;
+        --shadow: 0 18px 50px rgba(35, 56, 76, 0.09);
+      }
+
       * {
         box-sizing: border-box;
       }
 
       body {
         margin: 0;
-        padding: 50px;
-        color: #34383c;
-        background: #fff;
+        min-height: 100vh;
+        padding: 42px;
+        color: #343b42;
+        background: linear-gradient(135deg, #f3f7fa 0%, #fbfcfd 52%, #f2f6f9 100%);
         font-family: "lucida grande", "lucida sans unicode", lucida, "Helvetica Neue", Helvetica, Arial, sans-serif;
         font-size: 15px;
         line-height: 1.6;
@@ -57,13 +69,19 @@
       }
 
       a {
-        color: #0055aa;
+        color: var(--accent);
         text-decoration: none;
       }
 
       a:hover {
-        color: #003f80;
+        color: var(--accent-deep);
         text-decoration: underline;
+      }
+
+      a:focus-visible {
+        border-radius: 3px;
+        outline: 3px solid rgba(7, 90, 168, 0.25);
+        outline-offset: 3px;
       }
 
       p,
@@ -74,7 +92,7 @@
       }
 
       strong {
-        color: #222;
+        color: var(--ink);
         font-weight: 700;
       }
 
@@ -83,21 +101,30 @@
       }
 
       .wrapper {
-        width: 940px;
+        width: 1120px;
         margin: 0 auto;
       }
 
       header {
         float: left;
         position: fixed;
-        width: 240px;
+        width: 260px;
+        padding: 1.65rem 1.3rem 1.5rem;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: var(--surface);
+        box-shadow: var(--shadow);
         text-align: center;
       }
 
       section.content {
         float: right;
-        width: 650px;
-        padding-bottom: 2rem;
+        width: 810px;
+        padding: 1.55rem 2.1rem 2rem;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: var(--surface);
+        box-shadow: var(--shadow);
       }
 
       .avatar {
@@ -117,7 +144,7 @@
 
       h1 {
         margin: 0 0 0.45rem;
-        color: #222;
+        color: var(--ink);
         font-size: 250%;
         font-weight: 700;
         line-height: 1.05;
@@ -134,8 +161,8 @@
         margin-bottom: 0.45em;
         padding-top: 0.5em;
         padding-bottom: 0.2em;
-        border-bottom: 1px solid #d5d9de;
-        color: #393939;
+        border-bottom: 1px solid var(--line);
+        color: var(--ink);
         line-height: 1.15;
       }
 
@@ -152,7 +179,7 @@
 
       h4 {
         margin: 1.2rem 0 0.35rem;
-        color: #222;
+        color: var(--ink);
         font-size: 110%;
       }
 
@@ -180,12 +207,12 @@
       }
 
       .icons a {
-        color: #222;
+        color: var(--ink);
         line-height: 1;
       }
 
       .icons a:hover {
-        color: #0055aa;
+        color: var(--accent);
         text-decoration: none;
       }
 
@@ -224,7 +251,7 @@
       }
 
       .secondary-links a:hover {
-        color: #0055aa;
+        color: var(--accent);
       }
 
       .contact {
@@ -240,25 +267,77 @@
       }
 
       .research-focus {
-        margin: 0 0 1.15rem;
-        padding: 0.82rem 1rem 0.85rem;
-        border-left: 3px solid #0055aa;
-        border-radius: 0 5px 5px 0;
-        background: #f4f7fa;
+        margin: 0 0 1.25rem;
+        padding: 1.05rem;
+        border: 1px solid #dbe6f0;
+        border-radius: 14px;
+        background: linear-gradient(145deg, #f7fbff 0%, var(--surface-soft) 100%);
       }
 
-      .research-focus p {
+      .research-focus .research-intro {
+        margin: 0 0 0.8rem;
+        color: var(--muted);
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+
+      .research-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.75rem;
+      }
+
+      .research-card {
+        position: relative;
+        min-width: 0;
+        padding: 0.8rem 0.85rem 0.85rem;
+        overflow: hidden;
+        border: 1px solid #e0e8ef;
+        border-top: 3px solid var(--accent);
+        border-radius: 10px;
+        background: var(--surface);
+        box-shadow: 0 6px 18px rgba(35, 56, 76, 0.05);
+      }
+
+      .research-card:nth-child(2) {
+        border-top-color: #2a7b78;
+      }
+
+      .research-card h3 {
+        margin: 0.15rem 0 0.35rem;
+        padding: 0;
+        border: 0;
+        color: var(--ink);
+        font-size: 1.01rem;
+        line-height: 1.35;
+      }
+
+      .research-card p {
         margin: 0;
-        color: #282d31;
-        font-size: 1.03rem;
-        line-height: 1.55;
+        color: var(--muted);
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+
+      .research-number {
+        color: var(--accent);
+        font-size: 0.7rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+      }
+
+      .research-card:nth-child(2) .research-number {
+        color: #2a7b78;
       }
 
       .research-label {
-        margin-bottom: 0.22rem;
-        color: #0055aa;
+        margin: 0 0 0.28rem;
+        padding: 0;
+        border: 0;
+        color: var(--accent);
         font-size: 0.72rem;
         font-weight: 800;
+        line-height: 1.2;
         letter-spacing: 0.08em;
         text-transform: uppercase;
       }
@@ -299,22 +378,102 @@
 
       .entries {
         display: grid;
-        gap: 1rem;
+        gap: 0.75rem;
+      }
+
+      .entry {
+        padding: 0.72rem 0.82rem;
+        border: 1px solid #e6ebf0;
+        border-radius: 9px;
+        background: #fbfcfd;
       }
 
       .entry-title {
-        color: #222;
+        color: var(--ink);
         font-weight: 700;
       }
 
       .entry-title span,
       .entry-meta,
       .entry-note {
-        color: #666;
+        color: var(--muted);
       }
 
       .entry-note {
         font-size: 0.95rem;
+      }
+
+      .presentation-list {
+        display: grid;
+        gap: 0.75rem;
+      }
+
+      .presentation-card {
+        display: grid;
+        grid-template-columns: 7.3rem minmax(0, 1fr);
+        gap: 1rem;
+        padding: 0.9rem 1rem;
+        border: 1px solid #e1e7ed;
+        border-radius: 10px;
+        background: #fbfcfd;
+      }
+
+      .presentation-date {
+        align-self: stretch;
+        padding-right: 1rem;
+        border-right: 1px solid var(--line);
+        color: var(--accent);
+        font-size: 0.79rem;
+        font-weight: 800;
+        font-variant-numeric: tabular-nums;
+        line-height: 1.4;
+      }
+
+      .presentation-body {
+        min-width: 0;
+      }
+
+      .presentation-meta {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0.3rem 0.55rem;
+        margin-bottom: 0.3rem;
+        color: var(--muted);
+        font-size: 0.79rem;
+        font-weight: 600;
+      }
+
+      .presentation-kind {
+        padding: 0.08rem 0.48rem;
+        border-radius: 999px;
+        color: var(--accent-deep);
+        background: #e8f1fa;
+        font-size: 0.69rem;
+        font-weight: 800;
+        letter-spacing: 0.035em;
+        text-transform: uppercase;
+      }
+
+      .presentation-card h3 {
+        margin: 0 0 0.35rem;
+        padding: 0;
+        border: 0;
+        color: var(--ink);
+        font-size: 1.01rem;
+        line-height: 1.38;
+      }
+
+      .presentation-card p {
+        margin: 0.2rem 0 0;
+        color: var(--muted);
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+
+      .presentation-related a,
+      .presentation-link {
+        font-weight: 700;
       }
 
       .publications {
@@ -346,13 +505,14 @@
 
       .publications .row {
         display: flex;
-        gap: 1rem;
+        align-items: flex-start;
+        gap: 1.1rem;
         margin: 0;
       }
 
       .publications .abbr {
-        flex: 0 0 140px;
-        max-width: 140px;
+        flex: 0 0 225px;
+        max-width: 225px;
         padding: 0;
       }
 
@@ -380,12 +540,14 @@
 
       .publications .preview {
         display: block;
-        width: 140px;
-        max-height: 108px;
+        width: 225px;
+        height: auto;
         object-fit: contain;
         object-position: center;
-        border: 1px solid #e6e6e6;
-        background: #fff;
+        border: 1px solid #e1e6eb;
+        border-radius: 7px;
+        background: var(--surface);
+        box-shadow: 0 5px 16px rgba(35, 56, 76, 0.06);
       }
 
       .publications .row > div[id] {
@@ -394,7 +556,7 @@
       }
 
       .publications .title {
-        color: #222;
+        color: var(--ink);
         font-size: 1.02rem;
         font-weight: 700;
         line-height: 1.3;
@@ -402,13 +564,13 @@
 
       .publications .author,
       .publications .periodical {
-        color: #666;
+        color: var(--muted);
         font-size: 0.93rem;
         line-height: 1.4;
       }
 
       .publications .author em {
-        color: #0055aa;
+        color: var(--accent);
         font-style: normal;
         font-weight: 700;
       }
@@ -421,7 +583,7 @@
         display: inline;
         padding: 0;
         border: 0;
-        color: #0055aa;
+        color: var(--accent);
         background: transparent;
         box-shadow: none;
         font-size: 0.88rem;
@@ -440,6 +602,26 @@
         display: none;
       }
 
+      .publications .hidden.open {
+        display: block;
+        padding: 0.65rem 0.75rem;
+        margin-top: 0.55rem;
+        overflow-x: auto;
+        border: 1px solid var(--line);
+        border-radius: 7px;
+        background: var(--surface-soft);
+        font-size: 0.78rem;
+      }
+
+      .publications .hidden.open pre {
+        margin: 0;
+        white-space: pre-wrap;
+      }
+
+      .publications .links a[role="button"] {
+        cursor: pointer;
+      }
+
       .awards ul,
       .misc {
         padding-left: 1.2rem;
@@ -456,14 +638,14 @@
         font-size: 0.85rem;
       }
 
-      @media print, screen and (max-width: 1040px) {
+      @media print, screen and (max-width: 1220px) {
         body {
           padding: 28px 24px;
         }
 
         .wrapper {
           width: auto;
-          max-width: 700px;
+          max-width: 850px;
         }
 
         header,
@@ -474,7 +656,11 @@
         }
 
         header {
-          margin-bottom: 1.7rem;
+          margin-bottom: 1.25rem;
+        }
+
+        section.content {
+          padding: 1.55rem 2rem 2rem;
         }
 
         .avatar {
@@ -491,9 +677,22 @@
         }
       }
 
-      @media print, screen and (max-width: 560px) {
+      @media print, screen and (max-width: 620px) {
         body {
-          padding: 18px 14px;
+          padding: 14px 12px;
+        }
+
+        header,
+        section.content {
+          border-radius: 12px;
+        }
+
+        header {
+          padding: 1.25rem 1rem;
+        }
+
+        section.content {
+          padding: 1.05rem 1rem 1.35rem;
         }
 
         h1 {
@@ -507,7 +706,23 @@
         }
 
         .research-focus {
-          padding: 0.72rem 0.82rem;
+          padding: 0.85rem;
+        }
+
+        .research-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .presentation-card {
+          grid-template-columns: 1fr;
+          gap: 0.45rem;
+          padding: 0.8rem 0.85rem;
+        }
+
+        .presentation-date {
+          padding: 0 0 0.4rem;
+          border-right: 0;
+          border-bottom: 1px solid var(--line);
         }
 
         .news th,
@@ -532,7 +747,7 @@
 
         .publications .preview {
           width: 100%;
-          max-height: 150px;
+          height: auto;
         }
       }
     </style>
@@ -616,6 +831,49 @@
           <section id="publications">
             <h2>Selected Publications</h2>
             {% include selected_papers.liquid %}
+          </section>
+        {% endif %}
+
+        {% if page.presentations and page.presentations.size > 0 %}
+          <section id="presentations" class="presentations">
+            <h2>Presentations</h2>
+            <div class="presentation-list">
+              {% for presentation in page.presentations %}
+                <article class="presentation-card">
+                  <time class="presentation-date" datetime="{{ presentation.datetime }}">{{ presentation.date }}</time>
+                  <div class="presentation-body">
+                    <div class="presentation-meta">
+                      <span class="presentation-kind">{{ presentation.kind }}</span>
+                      <span>{{ presentation.venue }}</span>
+                    </div>
+                    <h3
+                      {% if presentation.lang %}
+                        lang="{{ presentation.lang }}"
+                      {% endif %}
+                    >
+                      {{ presentation.title }}
+                    </h3>
+                    {% if presentation.description %}
+                      <p>{{ presentation.description }}</p>
+                    {% endif %}
+                    {% if presentation.paper_title %}
+                      <p class="presentation-related">
+                        Based on our OSDI '26 paper:
+                        {% if presentation.url %}
+                          <a href="{{ presentation.url }}"
+                            ><cite>{{ presentation.paper_title }}</cite></a
+                          >.
+                        {% else %}
+                          <cite>{{ presentation.paper_title }}</cite>.
+                        {% endif %}
+                      </p>
+                    {% elsif presentation.url %}
+                      <a class="presentation-link" href="{{ presentation.url }}">{{ presentation.link_label | default: 'Learn more' }}</a>
+                    {% endif %}
+                  </div>
+                </article>
+              {% endfor %}
+            </div>
           </section>
         {% endif %}
 
@@ -725,6 +983,38 @@
         </footer>
       </section>
     </div>
+
+    <script>
+      document.querySelectorAll('.publications a.bibtex').forEach(function (button) {
+        const entry = button.closest('[id]');
+        const panel = entry ? entry.querySelector('div.bibtex.hidden') : null;
+
+        if (!entry || !panel) return;
+
+        panel.id = entry.id + '-bibtex';
+        button.setAttribute('href', '#' + panel.id);
+        button.setAttribute('aria-controls', panel.id);
+        button.setAttribute('aria-expanded', 'false');
+
+        const togglePanel = function () {
+          const willOpen = !panel.classList.contains('open');
+          panel.classList.toggle('open', willOpen);
+          button.setAttribute('aria-expanded', String(willOpen));
+        };
+
+        button.addEventListener('click', function (event) {
+          event.preventDefault();
+          togglePanel();
+        });
+
+        button.addEventListener('keydown', function (event) {
+          if (event.key === ' ') {
+            event.preventDefault();
+            togglePanel();
+          }
+        });
+      });
+    </script>
 
     {% if site.enable_cookie_consent %}
       <script

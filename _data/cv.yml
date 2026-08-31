@@ -4,7 +4,7 @@ cv:
   email: xin_tong@sjtu.edu.cn
   location: Shanghai, China
   image: prof_pic.png
-  summary: PhD student at SJTU IPADS Lab. Research interests include MLsys, AI Infrastructure, and Operating Systems.
+  summary: PhD student at SJTU IPADS Lab, focused on systems where AI is the author and systems for AI workloads.
 
   social_networks:
     - network: X
@@ -38,7 +38,7 @@ cv:
         end_date: Present
         highlights:
           - "Advisors: Prof. Haibo Chen and Associate Prof. Mingkai Dong"
-          - "Research direction: MLsys / AI Infrastructure / Operating Systems"
+          - "Research directions: systems where AI is the author; systems for AI workloads"
       - institution: Shanghai Jiao Tong University
         location: Shanghai, China
         area: Information Engineering
@@ -56,7 +56,7 @@ cv:
         location: Shanghai, China
         start_date: 2023
         end_date: Present
-        summary: Working on systems for AI and file systems.
+        summary: Researching dependable machine-authored code and knowledge, AI infrastructure, and edge AI systems.
         highlights:
           - "Inference in the Shadows: Taming Memory Bandwidth Contention in Mobile LLM Inference with Sereno (OSDI'26, first author)"
           - "Parer: Boosting EROFS image creation with parallelism (Internetware'24)"

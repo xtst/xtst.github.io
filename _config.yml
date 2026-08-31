@@ -9,11 +9,11 @@ last_name: Xin
 # contact_note: >
 #   You can reach me via these channels.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  PhD student at SJTU IPADS building infrastructure for AI agents and model training, with a focus on post-training systems for LLMs and multimodal LLMs.
+  PhD student at SJTU IPADS studying systems where AI is the author and systems for AI workloads, including dependable machine-written artifacts, AI infrastructure, and edge AI.
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
-keywords: SJTU, IPADS, ML systems, AI infrastructure, agent infrastructure, training infrastructure, LLM post-training, multimodal LLMs, operating systems # add your own keywords or leave empty
+keywords: SJTU, IPADS, AI-authored systems, machine-written code, machine-written knowledge, AI systems, AI infrastructure, edge AI, ML systems, operating systems # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: 🎓 # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
