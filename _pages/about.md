@@ -10,8 +10,8 @@ profile:
   image_circular: true # crops the image to make it circular
   contact: xin_tong (AT) sjtu (dot) edu (dot) cn
   more_info: >
-    <p>IPADS Laboratory</p>
-    <p>Shanghai Jiao Tong University</p>
+    <p>Institute of Parallel and Distributed Systems (并行与分布式系统研究所, IPADS)</p>
+    <p>Shanghai Jiao Tong University (上海交通大学, SJTU)</p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
@@ -24,6 +24,12 @@ announcements:
 awards:
   enabled: true
   limit: 4
+
+internships:
+  - organization: Qingyun Program (青云计划), Tencent Hunyuan Foundation Models (腾讯混元基础模型)
+    role: Research Intern
+    period: 2026 – Present
+    description: Research on training–inference consistency for large-scale LLM reinforcement learning.
 
 presentations:
   - datetime: "2026-07-30"
@@ -59,21 +65,22 @@ miscellaneous:
   <div class="research-grid">
     <article class="research-card">
       <span class="research-number" aria-hidden="true">01</span>
-      <h3>Systems where AI is the author</h3>
-      <p>Correctness and long-term maintenance of machine-written code and knowledge.</p>
+      <h3>Systems for AI workloads</h3>
+      <p>Efficient infrastructure for AI workloads, from on-device inference with Sereno to large-scale LLM reinforcement learning with UniExact.</p>
     </article>
     <article class="research-card">
       <span class="research-number" aria-hidden="true">02</span>
-      <h3>Systems for AI workloads</h3>
-      <p>Efficient infrastructure for demanding AI workloads, with particular interest in on-device and edge AI.</p>
+      <h3>Systems where AI is the author</h3>
+      <p>Correctness and long-term maintenance when AI writes system artifacts, from LLM-derived knowledge with LLMake to file-system code with FSCrash.</p>
     </article>
   </div>
 </section>
 
-I am a PhD student at the **Institute of Parallel and Distributed Systems (IPADS)**,
-**Shanghai Jiao Tong University (SJTU)**, advised by
-Prof. [Haibo Chen](https://ipads.se.sjtu.edu.cn/pub/members/haibo_chen) and
-Prof. [Mingkai Dong](https://dong.mk/). I received my B.Eng. degree in
+I am a PhD student at the **Institute of Parallel and Distributed Systems
+(并行与分布式系统研究所, IPADS)**, **Shanghai Jiao Tong University (上海交通大学,
+SJTU)**, advised by
+[Haibo Chen (陈海波)](https://ipads.se.sjtu.edu.cn/pub/members/haibo_chen) and
+[Mingkai Dong (董明凯)](https://dong.mk/). I received my B.Eng. degree in
 Information Engineering from SJTU in 2025.
 
 Across both directions, I work at the intersection of **ML systems** and

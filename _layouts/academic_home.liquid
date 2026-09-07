@@ -827,6 +827,29 @@
       <section class="content">
         <section id="about">{{ content }}</section>
 
+        {% if page.internships and page.internships.size > 0 %}
+          <section id="internship">
+            <h2>Internship</h2>
+            <div class="entries">
+              {% for internship in page.internships %}
+                <article class="entry">
+                  <div class="entry-title">{{ internship.organization }}</div>
+                  {% if internship.role or internship.period %}
+                    <div class="entry-meta">
+                      {% if internship.role %}{{ internship.role }}{% endif %}
+                      {% if internship.role and internship.period %}&bull;{% endif %}
+                      {% if internship.period %}{{ internship.period }}{% endif %}
+                    </div>
+                  {% endif %}
+                  {% if internship.description %}
+                    <div class="entry-note">{{ internship.description }}</div>
+                  {% endif %}
+                </article>
+              {% endfor %}
+            </div>
+          </section>
+        {% endif %}
+
         {% if page.selected_papers %}
           <section id="publications">
             <h2>Selected Publications</h2>

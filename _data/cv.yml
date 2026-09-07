@@ -4,7 +4,7 @@ cv:
   email: xin_tong@sjtu.edu.cn
   location: Shanghai, China
   image: prof_pic.png
-  summary: PhD student at SJTU IPADS Lab, focused on systems where AI is the author and systems for AI workloads.
+  summary: PhD student at SJTU IPADS Lab, focused on systems for AI workloads and systems where AI is the author.
 
   social_networks:
     - network: X
@@ -29,17 +29,17 @@ cv:
 
   sections:
     Education:
-      - institution: Shanghai Jiao Tong University
+      - institution: Shanghai Jiao Tong University (上海交通大学)
         location: Shanghai, China
         url: https://www.sjtu.edu.cn/
-        area: Computer Science (IPADS Lab)
+        area: Computer Science, Institute of Parallel and Distributed Systems (并行与分布式系统研究所, IPADS)
         studyType: PhD
         start_date: 2025
         end_date: Present
         highlights:
-          - "Advisors: Prof. Haibo Chen and Associate Prof. Mingkai Dong"
-          - "Research directions: systems where AI is the author; systems for AI workloads"
-      - institution: Shanghai Jiao Tong University
+          - "Advisors: Prof. Haibo Chen (陈海波) and Associate Prof. Mingkai Dong (董明凯)"
+          - "Research directions: systems for AI workloads; systems where AI is the author"
+      - institution: Shanghai Jiao Tong University (上海交通大学)
         location: Shanghai, China
         area: Information Engineering
         studyType: Bachelor
@@ -51,14 +51,21 @@ cv:
           - "7x University-level scholarships and honors"
 
     Experience:
-      - company: IPADS, Shanghai Jiao Tong University
+      - company: Tencent Hunyuan Foundation Models (腾讯混元基础模型)
+        position: Research Intern, Qingyun Program (青云计划)
+        start_date: 2026
+        end_date: Present
+        summary: Research on training–inference consistency for large-scale LLM reinforcement learning.
+      - company: Institute of Parallel and Distributed Systems (并行与分布式系统研究所, IPADS), Shanghai Jiao Tong University (上海交通大学, SJTU)
         position: Research Intern / PhD Student
         location: Shanghai, China
         start_date: 2023
         end_date: Present
-        summary: Researching dependable machine-authored code and knowledge, AI infrastructure, and edge AI systems.
+        summary: Researching AI infrastructure and edge AI systems, as well as dependable machine-authored code and knowledge.
         highlights:
           - "Inference in the Shadows: Taming Memory Bandwidth Contention in Mobile LLM Inference with Sereno (OSDI'26, first author)"
+          - "StarfishOS: Revisiting Single System Image on CXL with State-partitioned Microkernel (SOSP'26)"
+          - "SwitchFS: Asynchronous Metadata Updates for Distributed Filesystems with In-Network Coordination (EuroSys'26)"
           - "Parer: Boosting EROFS image creation with parallelism (Internetware'24)"
           - "PowerServe: High-performance mobile LLM inference framework (Core Contributor)"
 
