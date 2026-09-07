@@ -19,17 +19,17 @@ social: true # includes social icons at the bottom of the page
 announcements:
   enabled: true # includes a list of news items
   scrollable: true # adds a vertical scroll bar if there are more than 3 news items
-  limit: 5 # leave blank to include all the news in the `_news` folder
+  limit: 7 # leave blank to include all the news in the `_news` folder
 
 awards:
   enabled: true
   limit: 4
 
 internships:
-  - organization: Qingyun Program (青云计划), Tencent Hunyuan Foundation Models (腾讯混元基础模型)
+  - organization: Tencent Hunyuan Foundation Models (腾讯混元基础模型), Qingyun Program (青云计划)
     role: Research Intern
-    period: 2026 – Present
-    description: Research on training–inference consistency for large-scale LLM reinforcement learning.
+    period: July 2026 – Present
+    description: Research on large-scale LLM reinforcement learning.
 
 presentations:
   - datetime: "2026-07-30"
