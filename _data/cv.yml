@@ -52,10 +52,10 @@ cv:
 
     Experience:
       - company: Tencent Hunyuan Foundation Models (腾讯混元基础模型)
-        position: Research Intern, Qingyun Program (青云计划)
+        position: Research Intern
         start_date: "2026-07"
         end_date: Present
-        summary: Research on large-scale LLM reinforcement learning.
+        summary: Research on LLM reinforcement learning.
       - company: Institute of Parallel and Distributed Systems (并行与分布式系统研究所, IPADS), Shanghai Jiao Tong University (上海交通大学, SJTU)
         position: Research Intern / PhD Student
         location: Shanghai, China

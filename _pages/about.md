@@ -26,10 +26,10 @@ awards:
   limit: 4
 
 internships:
-  - organization: Tencent Hunyuan Foundation Models (腾讯混元基础模型), Qingyun Program (青云计划)
+  - organization: Tencent Hunyuan Foundation Models (腾讯混元基础模型)
     role: Research Intern
     period: July 2026 – Present
-    description: Research on large-scale LLM reinforcement learning.
+    description: Research on LLM reinforcement learning.
 
 presentations:
   - datetime: "2026-07-30"
@@ -66,7 +66,7 @@ miscellaneous:
     <article class="research-card">
       <span class="research-number" aria-hidden="true">01</span>
       <h3>Systems for AI workloads</h3>
-      <p>Efficient infrastructure for AI workloads, from on-device inference with Sereno to large-scale LLM reinforcement learning with UniExact.</p>
+      <p>Efficient infrastructure for AI workloads, from on-device inference with Sereno to training–inference consistency in large-scale LLM reinforcement learning.</p>
     </article>
     <article class="research-card">
       <span class="research-number" aria-hidden="true">02</span>
